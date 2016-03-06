@@ -81,12 +81,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)rubbingStart {
-    NSLog(@"start to rub");
+- (void)rubbingStart: (RubAndReveal *)rubAndReveal {
+    NSLog(@"start to rub: %@", rubAndReveal);
 }
 
-- (void)rubbingEnd {
-    NSLog(@"rubbing ends");
+- (void)rubbingEnd: (RubAndReveal *)rubAndReveal {
+    NSLog(@"rubbing ends: %@", rubAndReveal);
 }
 
 @end

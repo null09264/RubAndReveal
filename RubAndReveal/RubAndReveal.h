@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class RubAndReveal;
+
 @protocol RubAndRevealDelegate
 
 @optional
-- (void)rubbingStart;
+- (void)rubbingStart: (RubAndReveal *)rubAndReveal;
 
 @optional
-- (void)rubbingEnd;
+- (void)rubbingEnd: (RubAndReveal *)rubAndReveal;
 
 @end
 

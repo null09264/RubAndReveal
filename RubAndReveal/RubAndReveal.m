@@ -83,8 +83,8 @@
     CGPathMoveToPoint(self.eraseStroke, nil, touchPoint.x, touchPoint.y);
     self.eraseLayer.path = CGPathCreateMutableCopy(self.eraseStroke);
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(rubbingStart)]) {
-        [self.delegate rubbingStart];
+	if (self.delegate && [self.delegate respondsToSelector:@selector(rubbingStart:)]) {
+		[self.delegate rubbingStart: self];
     }
 }
 
@@ -98,14 +98,14 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(rubbingEnd)]) {
-        [self.delegate rubbingEnd];
+	if (self.delegate && [self.delegate respondsToSelector:@selector(rubbingEnd:)]) {
+        [self.delegate rubbingEnd: self];
     }
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(rubbingEnd)]) {
-        [self.delegate rubbingEnd];
+	if (self.delegate && [self.delegate respondsToSelector:@selector(rubbingEnd:)]) {
+        [self.delegate rubbingEnd: self];
     }
 }
 
